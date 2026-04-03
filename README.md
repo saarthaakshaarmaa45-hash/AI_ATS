@@ -22,7 +22,28 @@ This AI Resume Analyzer leverages the power of **OpenAI's GPT-3.5-Turbo** to pro
 
 ---
 
-## 🏗️ How It Was Built (Architecture)
+## � UI Showcase
+
+*(Replace the placeholder URLs with the actual paths to your screenshots, e.g., `images/home.png`)*
+
+### Landing Page
+<div align="center">
+  <img src="https://via.placeholder.com/800x400?text=Landing+Page+Screenshot" alt="Home Page" width="800"/>
+</div>
+
+### Upload & Target Role Selection
+<div align="center">
+  <img src="https://via.placeholder.com/800x400?text=Upload+Dashboard+Screenshot" alt="Upload Dashboard" width="800"/>
+</div>
+
+### Detailed AI Analysis Results
+<div align="center">
+  <img src="https://via.placeholder.com/800x600?text=AI+Analysis+Results+Screenshot" alt="AI Analysis Results" width="800"/>
+</div>
+
+---
+
+## �🏗️ How It Was Built (Architecture)
 
 This application is built using a high-performance **Vanilla JavaScript stack**. By avoiding heavy frameworks like React, the app remains extremely lean, fast-loading, and easy to deploy.
 
