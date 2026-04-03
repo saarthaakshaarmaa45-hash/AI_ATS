@@ -1,4 +1,4 @@
-# 🎯 AI Resume Analyzer & Career Architect
+# 🎯 Student Guide - AI Powered Career Guidance
 
 > **Bridging the Gap Between Job Seekers and ATS Systems with Generative AI.**
 
@@ -24,21 +24,23 @@ This AI Resume Analyzer leverages the power of **OpenAI's GPT-3.5-Turbo** to pro
 
 ## � UI Showcase
 
-*(Replace the placeholder URLs with the actual paths to your screenshots, e.g., `images/home.png`)*
 
 ### Landing Page
 <div align="center">
-  <img src="https://via.placeholder.com/800x400?text=Landing+Page+Screenshot" alt="Home Page" width="800"/>
+  <img alt="image" src="https://github.com/user-attachments/assets/6b9fbd14-a688-4ee2-b59b-762d1202ee8b" />
+ 
 </div>
 
 ### Upload & Target Role Selection
 <div align="center">
-  <img src="https://via.placeholder.com/800x400?text=Upload+Dashboard+Screenshot" alt="Upload Dashboard" width="800"/>
+  <img width="1883" height="914" alt="image" src="https://github.com/user-attachments/assets/f380314b-3318-4c7a-b862-488acf5fa097" />
+
 </div>
 
 ### Detailed AI Analysis Results
 <div align="center">
-  <img src="https://via.placeholder.com/800x600?text=AI+Analysis+Results+Screenshot" alt="AI Analysis Results" width="800"/>
+  <img width="1910" height="2791" alt="screencapture-localhost-3000-2026-04-04-00_20_10" src="https://github.com/user-attachments/assets/b2c59b4e-6089-4144-8584-0f9030032b27" />
+
 </div>
 
 ---
