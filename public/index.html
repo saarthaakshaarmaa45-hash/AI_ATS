@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Guide - AI Resume Analyzer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- HOME PAGE -->
+  <div id="home-page">
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Student Guide</span>
+        </div>
+        <div class="nav-options">
+          <a href="#features" onclick="smoothScroll('features')"><i class="fas fa-star"></i> Features</a>
+          <a href="#how-it-works" onclick="smoothScroll('how-it-works')"><i class="fas fa-cogs"></i> How It Works</a>
+          <a href="#roadmap" onclick="smoothScroll('roadmap')"><i class="fas fa-rocket"></i> Roadmap</a>
+          <a href="/about.html"><i class="fas fa-info-circle"></i> About</a>
+          <a href="/services.html"><i class="fas fa-briefcase"></i> Services</a>
+          <a href="/login.html" class="nav-login" id="loginBtn"><i class="fas fa-user"></i> Login</a>
+          <div class="user-menu" id="userMenu" style="display: none">
+            <button class="user-profile-btn" id="userProfileBtn">
+              <i class="fas fa-user-circle"></i>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu" style="display: none">
+              <div class="dropdown-header">
+                <strong id="dropdownUserName">User</strong>
+              </div>
+              <button id="logoutBtn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Your Resume, Perfectly Aligned</h1>
+        <p>
+          Get AI-powered insights to match your skills with job market demands
+          and unlock your full potential
+        </p>
+        <button class="btn btn-primary btn-lg" onclick="navigateToTryIt()">
+          <i class="fas fa-upload"></i> Analyze Your Resume
+        </button>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card">
+          <i class="fas fa-file-pdf"></i>
+          <p>Your Resume</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM & SOLUTION SECTION -->
+    <section class="problem-solution">
+      <div class="container">
+        <div class="problem-box">
+          <h3><i class="fas fa-exclamation-circle"></i> The Challenge</h3>
+          <p>
+            Students struggle to understand how their qualifications align
+            with job market demands. Without personalized feedback, many miss
+            opportunities to improve and stand out to employers.
+          </p>
+        </div>
+        <div class="arrow-divider"><i class="fas fa-arrow-right"></i></div>
+        <div class="solution-box">
+          <h3><i class="fas fa-lightbulb"></i> Our Solution</h3>
+          <p>
+            Upload your resume and get instant AI analysis tailored to your
+            target job role. Receive actionable insights to bridge skill gaps
+            and boost your competitiveness.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>AI-Powered Analysis</h3>
+            <p>
+              Intelligent algorithms analyze your resume against your desired
+              job role with precision and depth.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Job Role Matching</h3>
+            <p>
+              Select from 9+ job roles or input custom positions to get
+              tailored recommendations.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3>Detailed Feedback</h3>
+            <p>
+              Get comprehensive insights on strengths, gaps, and specific
+              areas for improvement.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3>Secure & Private</h3>
+            <p>
+              Your data is encrypted and protected. We never store or share
+              your personal information.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-zap"></i>
+            </div>
+            <h3>Instant Results</h3>
+            <p>
+              Get analysis results in seconds, not hours. No waiting, just
+              actionable insights.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Multi-Role Support</h3>
+            <p>
+              Analyze against multiple job roles simultaneously to explore
+              different career paths.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Upload Resume</h3>
+            <p>Simply upload your PDF resume</p>
+            <i class="fas fa-file-upload"></i>
+          </div>
+
+          <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Select Job Role</h3>
+            <p>Choose your target position</p>
+            <i class="fas fa-briefcase"></i>
+          </div>
+
+          <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Get Analysis</h3>
+            <p>Receive instant AI insights</p>
+            <i class="fas fa-sparkles"></i>
+          </div>
+
+          <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Improve</h3>
+            <p>Act on recommendations</p>
+            <i class="fas fa-thumbs-up"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORTED ROLES SECTION -->
+    <section class="supported-roles">
+      <div class="container">
+        <h2 class="section-title">Supported Job Roles</h2>
+        <div class="roles-grid">
+          <div class="role-badge">
+            <i class="fas fa-database"></i> Data Scientist
+          </div>
+          <div class="role-badge">
+            <i class="fas fa-code"></i> Frontend Developer
+          </div>
+          <div class="role-badge">
+            <i class="fas fa-server"></i> Backend Developer
+          </div>
+          <div class="role-badge">
+            <i class="fas fa-shield-alt"></i> Cyber Security
+          </div>
+          <div class="role-badge">
+            <i class="fas fa-cogs"></i> DevOps Engineer
+          </div>
+          <div class="role-badge">
+            <i class="fas fa-microchip"></i> AI/ML Engineer
+          </div>
+          <div class="role-badge">
+            <i class="fas fa-cube"></i> Blockchain Developer
+          </div>
+          <div class="role-badge">
+            <i class="fas fa-mobile-alt"></i> Mobile App Developer
+          </div>
+          <div class="role-badge">
+            <i class="fas fa-layer-group"></i> Full Stack Developer
+          </div>
+          <div class="role-badge">
+            <i class="fas fa-plus"></i> + Custom Roles
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP SECTION -->
+    <section id="roadmap" class="roadmap">
+      <div class="container">
+        <h2 class="section-title">Future Roadmap</h2>
+        <p class="section-subtitle">Exciting features coming soon</p>
+        <div class="roadmap-grid">
+          <div class="roadmap-card">
+            <div class="roadmap-icon"><i class="fas fa-brain"></i></div>
+            <h3>Advanced AI Models</h3>
+            <p>
+              More sophisticated AI for deeper, more accurate analysis of your
+              resume against market trends.
+            </p>
+          </div>
+
+          <div class="roadmap-card">
+            <div class="roadmap-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Course Recommendations</h3>
+            <p>
+              Get personalized course suggestions from Udemy, Coursera, and
+              other platforms to fill skill gaps.
+            </p>
+          </div>
+
+          <div class="roadmap-card">
+            <div class="roadmap-icon"><i class="fas fa-globe"></i></div>
+            <h3>Real-Time Job Data</h3>
+            <p>
+              Integration with live job market data to keep recommendations
+              aligned with current demands.
+            </p>
+          </div>
+
+          <div class="roadmap-card">
+            <div class="roadmap-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Resume Score Tracking</h3>
+            <p>
+              Track your progress over time and see how improvements impact
+              your resume score.
+            </p>
+          </div>
+
+          <div class="roadmap-card">
+            <div class="roadmap-icon"><i class="fas fa-users"></i></div>
+            <h3>Community Features</h3>
+            <p>
+              Connect with other students, share insights, and learn from
+              success stories.
+            </p>
+          </div>
+
+          <div class="roadmap-card">
+            <div class="roadmap-icon"><i class="fas fa-star"></i></div>
+            <h3>Interview Prep</h3>
+            <p>
+              AI-powered interview preparation tailored to your target role
+              and skill gaps.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Ready to Optimize Your Career?</h2>
+        <p>
+          Start analyzing your resume today and take the first step towards
+          your dream job
+        </p>
+        <button class="btn btn-primary btn-lg" onclick="navigateToTryIt()">
+          <i class="fas fa-rocket"></i> Get Started Now
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      Contact Us - abhishekpandit837@gmail.com<br />
+      © 2025 Student Guide Team. All rights reserved.
+    </footer>
+  </div>
+
+  <!-- TRY IT PAGE -->
+  <div id="try-page" style="
+        display: none;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f0f4ff 0%, #f8fafc 100%);
+      ">
+    <nav>
+      <div class="nav-logo" style="display: flex; align-items: center; gap: 0.75rem">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Student Guide</span>
+      </div>
+      <div class="nav-options">
+        <a href="#" onclick="navigateToHome()" style="margin-left: 0"><i class="fas fa-home"></i> Home</a>
+        <a href="/about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="/services.html"><i class="fas fa-briefcase"></i> Services</a>
+      </div>
+    </nav>
+
+    <div style="padding: 3rem 1rem">
+      <div class="form-container">
+        <form id="analyzeForm">
+          <h2><i class="fas fa-file-pdf"></i> Upload Your Resume</h2>
+          <label for="jobRole"><i class="fas fa-briefcase"></i> Select Your Target Role</label>
+          <select name="jobRole" id="jobRole" onchange="showOtherField(this)">
+            <option>Data Scientist</option>
+            <option>Frontend Developer</option>
+            <option>Backend Developer</option>
+            <option>Cyber Security</option>
+            <option>DevOps Engineer</option>
+            <option>AI/ML Engineer</option>
+            <option>Blockchain Developer</option>
+            <option>Mobile App Developer</option>
+            <option>Full Stack Developer</option>
+            <option value="other">Other (Specify Below)</option>
+          </select>
+
+          <div id="customFieldContainer" style="display: none">
+            <label for="customJobRole"><i class="fas fa-edit"></i> Enter Your Custom Role</label>
+            <input type="text" id="customJobRole" name="customJobRole"
+              placeholder="e.g., Cloud Architect, Data Engineer" />
+          </div>
+
+          <label for="file" style="margin-top: 1.5rem"><i class="fas fa-upload"></i> Upload Your PDF Resume</label>
+          <input type="file" id="resume" accept=".pdf" required />
+          <button class="btn btn-primary btn-lg" id="analyzeBtn" style="width: 100%; margin-top: 1rem">
+            <i class="fas fa-magic"></i> Analyze Resume
+          </button>
+        </form>
+      </div>
+      <div id="result" class="result" style="display: none"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+  <script>
+    const form = document.getElementById("analyzeForm");
+    const resultBox = document.getElementById("result");
+    const button = document.getElementById("analyzeBtn");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const resumeFile = document.getElementById("resume").files[0];
+      const roleSelect = document.getElementById("jobRole");
+      const customRole = document.getElementById("customJobRole").value;
+
+      let selectedRole = roleSelect.value;
+      if (selectedRole === "other" && customRole.trim()) {
+        selectedRole = customRole;
+      }
+
+      if (!resumeFile || !selectedRole) {
+        alert("Please upload a resume and select/enter a job role.");
+        return;
+      }
+
+      // Validate file type
+      if (resumeFile.type !== "application/pdf") {
+        alert("Please upload a PDF file only.");
+        return;
+      }
+
+      // Validate file size (max 10MB)
+      if (resumeFile.size > 10 * 1024 * 1024) {
+        alert("File size must be less than 10MB.");
+        return;
+      }
+
+      const token = localStorage.getItem("token");
+      if (!token) {
+        alert("Session expired. Please login again.");
+        window.location.href = "/login.html";
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("resume", resumeFile);
+      formData.append("jobRole", selectedRole);
+
+      try {
+        button.disabled = true;
+        button.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+
+        const response = await fetch("http://localhost:3000/analyze", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Get the text analysis content (handle both old and new response formats)
+          const analysisText =
+            data.textAnalysis ||
+            data.analysis ||
+            "Analysis completed successfully!";
+
+          let html;
+          try {
+            if (typeof marked !== 'undefined' && typeof marked.parse === 'function') {
+              html = marked.parse(analysisText);
+            } else if (typeof marked === 'function') {
+              html = marked(analysisText);
+            } else {
+              html = analysisText.replace(/\n/g, '<br>');
+            }
+          } catch (err) {
+            console.error("Marked error: ", err);
+            html = analysisText.replace(/\n/g, '<br>');
+          }
+
+          resultBox.innerHTML = html;
+          resultBox.style.display = "block";
+          resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          if (response.status === 401) {
+            alert("Session expired. Please login again.");
+            localStorage.removeItem("token");
+            window.location.href = "/login.html";
+          } else {
+            alert(data.error || "Analysis failed. Please try again.");
+          }
+        }
+      } catch (error) {
+        console.error("Network or parsing error:", error);
+        alert(
+          "Something went wrong. Please try again. Error: " + error.message,
+        );
+      } finally {
+        button.disabled = false;
+        button.innerHTML = '<i class="fas fa-magic"></i> Analyze Resume';
+      }
+    });
+
+    function navigateToTryIt() {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        alert("Please login first to analyze your resume.");
+        window.location.href = "/login.html";
+        return;
+      }
+      document.getElementById("home-page").style.display = "none";
+      document.getElementById("try-page").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function navigateToHome() {
+      document.getElementById("home-page").style.display = "block";
+      document.getElementById("try-page").style.display = "none";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showOtherField(select) {
+      const container = document.getElementById("customFieldContainer");
+      if (select.value === "other") {
+        container.style.display = "block";
+      } else {
+        container.style.display = "none";
+      }
+    }
+
+    function smoothScroll(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    // Check login status on page load
+    function checkLoginStatus() {
+      const token = localStorage.getItem("token");
+      const loginBtn = document.getElementById("loginBtn");
+      const userMenu = document.getElementById("userMenu");
+      const userProfileBtn = document.getElementById("userProfileBtn");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      if (token) {
+        // User is logged in
+        loginBtn.style.display = "none";
+        userMenu.style.display = "block";
+
+        // Try to fetch user info
+        fetchUserInfo(token);
+
+        // Toggle dropdown on click
+        userProfileBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          dropdownMenu.style.display =
+            dropdownMenu.style.display === "none" ? "block" : "none";
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", () => {
+          dropdownMenu.style.display = "none";
+        });
+      } else {
+        // User is not logged in
+        loginBtn.style.display = "block";
+        userMenu.style.display = "none";
+      }
+    }
+
+    // Fetch user info from server
+    async function fetchUserInfo(token) {
+      try {
+        const response = await fetch("http://localhost:3000/api/profile", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          const dropdownUserName =
+            document.getElementById("dropdownUserName");
+          dropdownUserName.textContent = data.user.name || "User";
+        }
+      } catch (error) {
+        console.error("Failed to fetch user info:", error);
+      }
+    }
+
+    // Logout function
+    function logout() {
+      localStorage.removeItem("token");
+      alert("Logged out successfully");
+      window.location.reload();
+    }
+
+    // Call checkLoginStatus when page loads
+    document.addEventListener("DOMContentLoaded", checkLoginStatus);
+  </script>
+</body>
+
+</html>

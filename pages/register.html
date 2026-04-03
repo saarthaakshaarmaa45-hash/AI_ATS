@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Student Guide</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f9fafb;
+        color: #1a202c;
+      }
+
+      main.try-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        background: linear-gradient(135deg, #f0f4ff 0%, #f8fafc 100%);
+      }
+
+      .try-box {
+        background: white;
+        padding: 3rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1);
+        max-width: 450px;
+        width: 100%;
+        border-top: 4px solid #10b981;
+      }
+
+      .try-box h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #10b981;
+        font-size: 1.8rem;
+      }
+
+      .try-box form label {
+        display: block;
+        margin-top: 1.2rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #1a202c;
+      }
+
+      .try-box form input,
+      .try-box form select {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        box-sizing: border-box;
+      }
+
+      .try-box form input:focus,
+      .try-box form select:focus {
+        outline: none;
+        border-color: #10b981;
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+      }
+
+      .try-box form button {
+        width: 100%;
+        padding: 0.75rem;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+      }
+
+      .try-box form button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        color: white;
+        font-size: 0.95rem;
+      }
+
+      .navbar {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        padding: 1rem 0;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: white;
+      }
+
+      .nav-logo i {
+        font-size: 1.75rem;
+      }
+
+      .nav-options {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-options a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      }
+
+      .nav-options a:hover {
+        opacity: 0.8;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Student Guide</span>
+        </div>
+        <div class="nav-options">
+          <a href="/index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="/about.html"><i class="fas fa-info-circle"></i> About</a>
+          <a href="/services.html"><i class="fas fa-briefcase"></i> Services</a>
+          <a href="/login.html" id="loginBtn"
+            ><i class="fas fa-user"></i> Login</a
+          >
+          <div class="user-menu" id="userMenu" style="display: none">
+            <button class="user-profile-btn" id="userProfileBtn">
+              <i class="fas fa-user-circle"></i>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu" style="display: none">
+              <div class="dropdown-header">
+                <strong id="dropdownUserName">User</strong>
+              </div>
+              <button id="logoutBtn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="try-section">
+      <div class="try-box">
+        <h2>User Registration</h2>
+        <form id="register-form" method="post">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your full name"
+            pattern="^[a-zA-Z\s]+$"
+            title="Full name can only contain letters and spaces"
+            required
+          />
+          <small
+            id="nameError"
+            style="
+              color: #dc2626;
+              display: none;
+              margin-top: -0.8rem;
+              margin-bottom: 0.5rem;
+            "
+          >
+            <i class="fas fa-exclamation-circle"></i> Full name can only contain
+            letters and spaces
+          </small>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+
+          <label for="field">Field of Interest</label>
+          <select id="field" required>
+            <option>Data Scientist</option>
+            <option>Frontend Developer</option>
+            <option>Backend Developer</option>
+            <option>Cyber Security</option>
+            <option>DevOps Engineer</option>
+            <option>AI/ML Engineer</option>
+            <option>Blockchain Developer</option>
+            <option>Mobile App Developer</option>
+            <option>Full Stack Developer</option>
+          </select>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" required />
+
+          <button type="submit">Register</button>
+          <pre>Already have an account?<a href="/login.html">Login Here</a></pre>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      Contact Us - abhishekpandit837@gmail.com<br />
+      © 2025 Student Guide Team. All rights reserved.
+    </footer>
+
+    <script>
+      // Real-time validation for Full Name
+      const nameInput = document.getElementById("name");
+      const nameError = document.getElementById("nameError");
+      const namePattern = /^[a-zA-Z\s]*$/;
+
+      nameInput.addEventListener("input", function () {
+        const value = this.value;
+
+        if (value && !namePattern.test(value)) {
+          nameError.style.display = "block";
+          this.style.borderColor = "#dc2626";
+        } else {
+          nameError.style.display = "none";
+          this.style.borderColor = "#e2e8f0";
+        }
+      });
+
+      // Prevent invalid characters while typing
+      nameInput.addEventListener("keypress", function (e) {
+        const char = e.key;
+        if (!/^[a-zA-Z\s]$/.test(char)) {
+          e.preventDefault();
+        }
+      });
+
+      document
+        .getElementById("register-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const field = document.getElementById("field").value;
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirm-password").value;
+
+          // Validate Full Name
+          const namePattern = /^[a-zA-Z\s]+$/;
+          if (!name) {
+            alert("Please enter your full name");
+            return;
+          }
+          if (!namePattern.test(name)) {
+            alert(
+              "Full name can only contain letters and spaces. Numbers and special characters are not allowed.",
+            );
+            nameError.style.display = "block";
+            nameInput.focus();
+            return;
+          }
+
+          // Validate Email
+          if (!email) {
+            alert("Please enter your email");
+            return;
+          }
+
+          // Validate Password Match
+          if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+          }
+
+          // Validate Password Length
+          if (password.length < 6) {
+            alert("Password must be at least 6 characters long");
+            return;
+          }
+
+          const formData = {
+            name,
+            email,
+            field,
+            password,
+          };
+
+          try {
+            const response = await fetch("http://localhost:3000/api/register", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+              alert("Registration successful! Please login to continue.");
+              localStorage.setItem("token", data.token); // Save JWT token
+              window.location.href = "/login.html"; // Redirect to login page
+            } else {
+              alert(data.error || "Something went wrong");
+            }
+          } catch (error) {
+            console.error(error);
+            alert("Error: " + error.message);
+          }
+        });
+
+      // Check login status on page load
+      function checkLoginStatus() {
+        const token = localStorage.getItem("token");
+        const loginBtn = document.getElementById("loginBtn");
+        const userMenu = document.getElementById("userMenu");
+        const userProfileBtn = document.getElementById("userProfileBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        if (token) {
+          // User is logged in
+          loginBtn.style.display = "none";
+          userMenu.style.display = "block";
+
+          // Try to fetch user info
+          fetchUserInfo(token);
+
+          // Toggle dropdown on click
+          userProfileBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdownMenu.style.display =
+              dropdownMenu.style.display === "none" ? "block" : "none";
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener("click", () => {
+            dropdownMenu.style.display = "none";
+          });
+        } else {
+          // User is not logged in
+          loginBtn.style.display = "block";
+          userMenu.style.display = "none";
+        }
+      }
+
+      // Fetch user info from server
+      async function fetchUserInfo(token) {
+        try {
+          const response = await fetch("http://localhost:3000/api/profile", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const dropdownUserName =
+              document.getElementById("dropdownUserName");
+            dropdownUserName.textContent = data.user.name || "User";
+          }
+        } catch (error) {
+          console.error("Failed to fetch user info:", error);
+        }
+      }
+
+      // Logout function
+      function logout() {
+        localStorage.removeItem("token");
+        alert("Logged out successfully");
+        window.location.reload();
+      }
+
+      // Call checkLoginStatus when page loads
+      document.addEventListener("DOMContentLoaded", checkLoginStatus);
+    </script>
+  </body>
+</html>

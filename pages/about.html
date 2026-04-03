@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About - Student Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Student Guide</span>
+        </div>
+        <div class="nav-options">
+          <a href="/index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="/services.html"><i class="fas fa-briefcase"></i> Services</a>
+          <a href="/login.html" class="nav-login" id="loginBtn"
+            ><i class="fas fa-user"></i> Login</a
+          >
+          <div class="user-menu" id="userMenu" style="display: none;">
+            <button class="user-profile-btn" id="userProfileBtn">
+              <i class="fas fa-user-circle"></i>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+              <div class="dropdown-header">
+                <strong id="dropdownUserName">User</strong>
+              </div>
+              <button id="logoutBtn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ABOUT PAGE -->
+    <div class="about-container">
+      <!-- HERO SECTION -->
+      <section class="about-hero">
+        <div class="container">
+          <h1><i class="fas fa-info-circle"></i> About Student Guide</h1>
+          <p>
+            An AI-powered resume analyzer helping students bridge the gap
+            between their skills and job market demands
+          </p>
+        </div>
+      </section>
+
+      <!-- PROJECT OVERVIEW -->
+      <section class="about-section">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-text">
+              <h2><i class="fas fa-rocket"></i> Our Mission</h2>
+              <p>
+                Student Guide is designed to empower students and fresh
+                graduates by providing them with personalized, AI-driven
+                insights into their resumes. We believe that every student
+                deserves a fair chance to understand how their qualifications
+                align with industry demands.
+              </p>
+              <p>
+                Our platform analyzes your resume against multiple job roles,
+                identifying skill gaps, highlighting strengths, and providing
+                actionable recommendations to make you more competitive in the
+                job market.
+              </p>
+            </div>
+            <div class="about-visual">
+              <div class="visual-box">
+                <i class="fas fa-brain"></i>
+                <h3>AI-Powered</h3>
+                <p>Advanced analysis</p>
+              </div>
+              <div class="visual-box">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data-Driven</h3>
+                <p>Market insights</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CREATOR SECTION -->
+      <section class="about-section alternate-bg">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-user-tie"></i> Project Creator
+          </h2>
+          <div class="creator-card">
+            <div class="creator-avatar">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="creator-info">
+              <h3>Abhishek Pandit</h3>
+              <p class="creator-title">
+                Final-Year Computer Science Student (B.Tech)
+              </p>
+
+              <div class="creator-description">
+                <p>
+                  <strong>About Abhishek:</strong> A final-year Computer Science
+                  student skilled in full-stack development and basic data
+                  analysis. Experienced in building projects using HTML, CSS,
+                  JavaScript, React, Node.js, and MongoDB. Seeking an
+                  opportunity to apply skills and grow in a real-world
+                  development environment.
+                </p>
+              </div>
+
+              <div class="creator-skills">
+                <h4><i class="fas fa-code"></i> Technical Skills</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">HTML</span>
+                  <span class="skill-tag">CSS</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Express.js</span>
+                  <span class="skill-tag">MongoDB</span>
+                  <span class="skill-tag">Data Analysis</span>
+                  <span class="skill-tag">Full-Stack Development</span>
+                </div>
+              </div>
+
+              <div class="creator-contact">
+                <h4><i class="fas fa-envelope"></i> Get in Touch</h4>
+                <a
+                  href="mailto:abhishekpandit837@gmail.com"
+                  class="contact-link"
+                >
+                  <i class="fas fa-envelope"></i> abhishekpandit837@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNOLOGY STACK -->
+      <section class="about-section">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-cogs"></i> Technology Stack
+          </h2>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <i class="fab fa-html5"></i>
+              <h3>Frontend</h3>
+              <p>HTML, CSS, JavaScript, React</p>
+            </div>
+            <div class="tech-card">
+              <i class="fab fa-node-js"></i>
+              <h3>Backend</h3>
+              <p>Node.js, Express.js</p>
+            </div>
+            <div class="tech-card">
+              <i class="fas fa-database"></i>
+              <h3>Database</h3>
+              <p>MongoDB</p>
+            </div>
+            <div class="tech-card">
+              <i class="fas fa-brain"></i>
+              <h3>AI</h3>
+              <p>OpenAI API</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KEY FEATURES -->
+      <section class="about-section alternate-bg">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fas fa-sparkles"></i> Key Features
+          </h2>
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-number">1</div>
+              <h3>Multi-Role Analysis</h3>
+              <p>
+                Analyze your resume against 9+ job roles or custom positions of
+                your choice.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-number">2</div>
+              <h3>Instant Feedback</h3>
+              <p>
+                Get comprehensive, actionable insights within seconds to improve
+                your resume.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-number">3</div>
+              <h3>Skill Gap Identification</h3>
+              <p>
+                Understand exactly which skills you need to develop to stay
+                competitive.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-number">4</div>
+              <h3>Data Security</h3>
+              <p>
+                Your resume and data are encrypted and never stored or shared.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="about-cta">
+        <div class="container">
+          <h2>Ready to Analyze Your Resume?</h2>
+          <p>Start your journey towards career success with Student Guide</p>
+          <a href="../public/index.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-arrow-right"></i> Start Analyzing
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      Contact Us - abhishekpandit837@gmail.com<br />
+      © 2025 Student Guide Team. All rights reserved.
+    </footer>
+
+    <script>
+      // Check login status on page load
+      function checkLoginStatus() {
+        const token = localStorage.getItem("token");
+        const loginBtn = document.getElementById("loginBtn");
+        const userMenu = document.getElementById("userMenu");
+        const userProfileBtn = document.getElementById("userProfileBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        if (token) {
+          // User is logged in
+          loginBtn.style.display = "none";
+          userMenu.style.display = "block";
+
+          // Try to fetch user info
+          fetchUserInfo(token);
+
+          // Toggle dropdown on click
+          userProfileBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdownMenu.style.display =
+              dropdownMenu.style.display === "none" ? "block" : "none";
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener("click", () => {
+            dropdownMenu.style.display = "none";
+          });
+        } else {
+          // User is not logged in
+          loginBtn.style.display = "block";
+          userMenu.style.display = "none";
+        }
+      }
+
+      // Fetch user info from server
+      async function fetchUserInfo(token) {
+        try {
+          const response = await fetch("http://localhost:3000/api/profile", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const dropdownUserName = document.getElementById("dropdownUserName");
+            dropdownUserName.textContent = data.user.name || "User";
+          }
+        } catch (error) {
+          console.error("Failed to fetch user info:", error);
+        }
+      }
+
+      // Logout function
+      function logout() {
+        localStorage.removeItem("token");
+        alert("Logged out successfully");
+        window.location.reload();
+      }
+
+      // Call checkLoginStatus when page loads
+      document.addEventListener("DOMContentLoaded", checkLoginStatus);
+    </script>
+  </body>
+</html>

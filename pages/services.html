@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Student Guide</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #1a202c;
+      }
+
+      main {
+        padding: 4rem 1.5rem;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .services-heading {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        border-top: 4px solid #10b981;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(16, 185, 129, 0.15);
+      }
+
+      .service-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: #10b981;
+      }
+
+      .service-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #64748b;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        color: white;
+        font-size: 0.95rem;
+      }
+
+      .navbar {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        padding: 1rem 0;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: white;
+      }
+
+      .nav-logo i {
+        font-size: 1.75rem;
+      }
+
+      .nav-options {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-options a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      }
+
+      .nav-options a:hover {
+        opacity: 0.8;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-graduation-cap"></i>
+          <span>Student Guide</span>
+        </div>
+        <div class="nav-options">
+          <a href="/index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="/about.html"><i class="fas fa-info-circle"></i> About</a>
+          <a href="/login.html" id="loginBtn"
+            ><i class="fas fa-user"></i> Login</a
+          >
+
+          <div class="user-menu" id="userMenu" style="display: none">
+            <button class="user-profile-btn" id="userProfileBtn">
+              <i class="fas fa-user-circle"></i>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu" style="display: none">
+              <div class="dropdown-header">
+                <strong id="dropdownUserName">User</strong>
+              </div>
+              <button id="logoutBtn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <h2 class="services-heading">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-title">Resume Analyzer</div>
+          <div class="service-desc">
+            Upload your resume and get instant feedback on skills, job match
+            percentage, and improvement suggestions using AI.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Career Guidance</div>
+          <div class="service-desc">
+            Confused about your future path? Get personalized career counseling
+            and roadmap based on your interests and skills.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Mock Interviews</div>
+          <div class="service-desc">
+            Practice with real-time coding and HR interviews to boost your
+            confidence and improve communication.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Project Ideas</div>
+          <div class="service-desc">
+            Explore curated final year project ideas with descriptions, tech
+            stacks, and GitHub links.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Learning Resources</div>
+          <div class="service-desc">
+            Access free curated learning paths, books, tutorials, and
+            certifications for your chosen field.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Internship Finder</div>
+          <div class="service-desc">
+            Get a list of current internship opportunities that match your
+            interests and location.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      Contact Us - abhishekpandit837@gmail.com<br />
+      © 2025 Student Guide Team. All rights reserved.
+    </footer>
+
+    <script>
+      // Check login status on page load
+      function checkLoginStatus() {
+        const token = localStorage.getItem("token");
+        const loginBtn = document.getElementById("loginBtn");
+        const userMenu = document.getElementById("userMenu");
+        const userProfileBtn = document.getElementById("userProfileBtn");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        if (token) {
+          // User is logged in
+          loginBtn.style.display = "none";
+          userMenu.style.display = "block";
+
+          // Try to fetch user info
+          fetchUserInfo(token);
+
+          // Toggle dropdown on click
+          userProfileBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdownMenu.style.display =
+              dropdownMenu.style.display === "none" ? "block" : "none";
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener("click", () => {
+            dropdownMenu.style.display = "none";
+          });
+        } else {
+          // User is not logged in
+          loginBtn.style.display = "block";
+          userMenu.style.display = "none";
+        }
+      }
+
+      // Fetch user info from server
+      async function fetchUserInfo(token) {
+        try {
+          const response = await fetch("http://localhost:3000/api/profile", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const dropdownUserName =
+              document.getElementById("dropdownUserName");
+            dropdownUserName.textContent = data.user.name || "User";
+          }
+        } catch (error) {
+          console.error("Failed to fetch user info:", error);
+        }
+      }
+
+      // Logout function
+      function logout() {
+        localStorage.removeItem("token");
+        alert("Logged out successfully");
+        window.location.reload();
+      }
+
+      // Call checkLoginStatus when page loads
+      document.addEventListener("DOMContentLoaded", checkLoginStatus);
+    </script>
+  </body>
+</html>
