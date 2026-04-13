@@ -1,4 +1,4 @@
-# 🎯 Student Guide - AI Powered Career Guidance
+# 🎯 AI Resume Analyzer
 
 > **Bridging the Gap Between Job Seekers and ATS Systems with Generative AI.**
 
